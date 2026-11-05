@@ -1,0 +1,14 @@
+name: Environment Variables
+on:
+  push:
+  workflow_dispatch:
+
+env:
+  APP_ENV: development
+
+jobs:
+  show-environment:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print environment
+        run: echo "App environment is $APP_ENV"
