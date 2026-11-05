@@ -1,0 +1,16 @@
+name: Environment Variables and Conditions
+
+on:
+  push:
+  workflow_dispatch:
+
+env:
+  APP_ENV: development
+
+jobs:
+  deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy
+        run: echo "Deploying"
